@@ -1,0 +1,37 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+}
+
+.clearfix {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav {
+  position: fixed;
+  top:0;
+  display: inline;
+  justify-content: space-around;
+  border-radius: 5px;
+  background-color: cadetblue;
+  overflow: hidden;
+}
+
+nav a {
+  margin: 0;
+  padding: 0;
+  color: white;
+  display: grid;
+  width: 100%;
+  justify-content: space-around;
+}
+
+nav a:hover {
+
+  background-color: aquamarine;
+  color: black;
+}
