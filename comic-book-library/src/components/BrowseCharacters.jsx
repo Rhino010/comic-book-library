@@ -1,14 +1,15 @@
-import mockMarvelAPI from "./mockData";
+import { useNavigate } from "react-router-dom";
 
-const BrowseCharacters = (mockMarvelAPI) => {
 
+const BrowseCharacters = ({marvelData}) => {
+    const navigate = useNavigate();
 
     return (
         <div>
             <h2>Browse Characters</h2>
             <ul>
-                {mockMarvelAPI.map((character) => (
-                    <li key={character.id}>Name: {character.name}, Comics: {character.comics}</li>
+                {marvelData.map((character) => (
+                    <li key={character.id} onClick={() => navigate(`/character-details/${character.id}`)}>{character.name}</li>
 
                 ))}
             </ul>

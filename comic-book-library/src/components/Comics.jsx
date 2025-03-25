@@ -1,9 +1,17 @@
 
-const Comics = () => {
+
+const Comics = ({marvelData}) => {
+    
+
     return (
         <div>
-            <h2>Comics</h2>
-            <p>This component is under construction. Check back later!</p>
+            <h2>Comics:</h2>
+            <ul>
+                {marvelData.map((character) => (
+                    <li key={character.id}>Name: {character.name}, Comics: {character.comics}</li>
+
+                ))}
+            </ul>
         </div>
     );
 };

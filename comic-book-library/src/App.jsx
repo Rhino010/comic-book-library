@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import NavigationBar from './components/NavigationBar'
@@ -7,8 +6,10 @@ import Comics from './components/Comics'
 import NotFound from './components/NotFound'
 import CharacterDetails from './components/CharacterDetails'
 import Home from './components/Home'
+import mockMarvelAPI from './components/mockData'
 
 function App() {
+      const marvelData = mockMarvelAPI.data;
 
   return (
     <>
@@ -17,9 +18,9 @@ function App() {
           <div className='container'>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/comics' element={<Comics />} />
-              <Route path='/character-details' element={<CharacterDetails />} />
-              <Route path='/browse-characters' element={<BrowseCharacters />} />
+              <Route path='/comics' element={<Comics marvelData={marvelData}/>} />
+              <Route path='/character-details/:id' element={<CharacterDetails marvelData={marvelData}/>} />
+              <Route path='/browse-characters' element={<BrowseCharacters marvelData={marvelData}/>} />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </div>

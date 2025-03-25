@@ -1,10 +1,13 @@
-import mockMarvelAPI from "./mockData";
+import { useParams } from 'react-router-dom';
 
-const CharacterDetails = (id) => {
+const CharacterDetails = ({marvelData}) => {
+    const { id } = useParams();
+    const character = marvelData.find(char => char.id === parseInt(id) )
+
     return (
         <div>
-            <h2>Character Details</h2>
-            <p>This component is under construction. Check back later!</p>
+            <h2>{character.name}</h2>
+            <p>{character.details}</p>
         </div>
     );
 };
